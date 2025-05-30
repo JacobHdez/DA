@@ -1,101 +1,101 @@
-idDriver,dtRef,f1Churn
-albon,2025-04-06,0
-alonso,2025-04-06,0
-antonelli,2025-04-06,0
-bearman,2025-04-06,0
-bortoleto,2025-04-06,1
-doohan,2025-04-06,1
-gasly,2025-04-06,0
-hadjar,2025-04-06,0
-hamilton,2025-04-06,0
-hulkenberg,2025-04-06,0
-lawson,2025-04-06,0
-leclerc,2025-04-06,0
-max_verstappen,2025-04-06,0
-norris,2025-04-06,0
-ocon,2025-04-06,0
-piastri,2025-04-06,0
-russell,2025-04-06,0
-sainz,2025-04-06,0
-stroll,2025-04-06,0
-tsunoda,2025-04-06,0
-albon,2025-03-23,0
-alonso,2025-03-23,0
-antonelli,2025-03-23,0
-bearman,2025-03-23,0
-bortoleto,2025-03-23,0
-doohan,2025-03-23,1
-gasly,2025-03-23,0
-hadjar,2025-03-23,0
-hamilton,2025-03-23,0
-hulkenberg,2025-03-23,0
-lawson,2025-03-23,0
-leclerc,2025-03-23,0
-max_verstappen,2025-03-23,0
-norris,2025-03-23,0
-ocon,2025-03-23,0
-piastri,2025-03-23,0
-russell,2025-03-23,0
-sainz,2025-03-23,0
-stroll,2025-03-23,0
-tsunoda,2025-03-23,0
-albon,2025-03-16,0
-alonso,2025-03-16,0
-antonelli,2025-03-16,1
-bearman,2025-03-16,0
-bortoleto,2025-03-16,0
-doohan,2025-03-16,0
-gasly,2025-03-16,0
-hadjar,2025-03-16,0
-hamilton,2025-03-16,0
-hulkenberg,2025-03-16,0
-lawson,2025-03-16,0
-leclerc,2025-03-16,0
-max_verstappen,2025-03-16,0
-norris,2025-03-16,0
-ocon,2025-03-16,0
-piastri,2025-03-16,0
-russell,2025-03-16,0
-sainz,2025-03-16,0
-stroll,2025-03-16,0
-tsunoda,2025-03-16,0
-albon,2025-04-13,0
-alonso,2025-04-13,0
-antonelli,2025-04-13,0
-bearman,2025-04-13,0
-bortoleto,2025-04-13,1
-doohan,2025-04-13,1
-gasly,2025-04-13,0
-hadjar,2025-04-13,0
-hamilton,2025-04-13,0
-hulkenberg,2025-04-13,0
-lawson,2025-04-13,0
-leclerc,2025-04-13,0
-max_verstappen,2025-04-13,0
-norris,2025-04-13,0
-ocon,2025-04-13,0
-piastri,2025-04-13,0
-russell,2025-04-13,0
-sainz,2025-04-13,0
-stroll,2025-04-13,0
-tsunoda,2025-04-13,0
-albon,2025-04-20,0
-alonso,2025-04-20,0
-antonelli,2025-04-20,0
-bearman,2025-04-20,0
-bortoleto,2025-04-20,0
-doohan,2025-04-20,1
-gasly,2025-04-20,0
-hadjar,2025-04-20,0
-hamilton,2025-04-20,0
-hulkenberg,2025-04-20,0
-lawson,2025-04-20,0
-leclerc,2025-04-20,0
-max_verstappen,2025-04-20,0
-norris,2025-04-20,0
-ocon,2025-04-20,0
-piastri,2025-04-20,0
-russell,2025-04-20,0
-sainz,2025-04-20,0
-stroll,2025-04-20,0
-tsunoda,2025-04-20,0
+idDriver,dtRef,f1Churn,proba
+Alexander Albon,2025-04-06,0,0.21
+Fernando Alonso,2025-04-06,0,0.3239977415979567
+Kimi Antonelli,2025-04-06,0,0.205
+Oliver Bearman,2025-04-06,0,0.325
+Gabriel Bortoleto,2025-04-06,1,0.895
+Jack Doohan,2025-04-06,1,0.76
+Pierre Gasly,2025-04-06,0,0.155
+Isack Hadjar,2025-04-06,0,0.015
+Lewis Hamilton,2025-04-06,0,0.035
+Nico Hulkenberg,2025-04-06,0,0.175
+Liam Lawson,2025-04-06,0,0.455
+Charles Leclerc,2025-04-06,0,0.01
+Max Verstappen,2025-04-06,0,0.0
+Lando Norris,2025-04-06,0,0.01
+Esteban Ocon,2025-04-06,0,0.225
+Oscar Piastri,2025-04-06,0,0.0
+George Russell,2025-04-06,0,0.015
+Carlos Sainz,2025-04-06,0,0.005
+Lance Stroll,2025-04-06,0,0.295
+Yuki Tsunoda,2025-04-06,0,0.175
+Alexander Albon,2025-03-23,0,0.145
+Fernando Alonso,2025-03-23,0,0.3455516285516286
+Kimi Antonelli,2025-03-23,0,0.21
+Oliver Bearman,2025-03-23,0,0.373930338412824
+Gabriel Bortoleto,2025-03-23,0,0.475
+Jack Doohan,2025-03-23,1,0.915
+Pierre Gasly,2025-03-23,0,0.195
+Isack Hadjar,2025-03-23,0,0.05
+Lewis Hamilton,2025-03-23,0,0.02
+Nico Hulkenberg,2025-03-23,0,0.135
+Liam Lawson,2025-03-23,0,0.42
+Charles Leclerc,2025-03-23,0,0.005
+Max Verstappen,2025-03-23,0,0.0
+Lando Norris,2025-03-23,0,0.005
+Esteban Ocon,2025-03-23,0,0.155
+Oscar Piastri,2025-03-23,0,0.005
+George Russell,2025-03-23,0,0.005
+Carlos Sainz,2025-03-23,0,0.0
+Lance Stroll,2025-03-23,0,0.16
+Yuki Tsunoda,2025-03-23,0,0.115
+Alexander Albon,2025-03-16,0,0.155
+Fernando Alonso,2025-03-16,0,0.16776576576576577
+Kimi Antonelli,2025-03-16,1,0.5312997991241186
+Oliver Bearman,2025-03-16,0,0.20776507276507275
+Gabriel Bortoleto,2025-03-16,0,0.195
+Jack Doohan,2025-03-16,0,0.375
+Pierre Gasly,2025-03-16,0,0.17
+Isack Hadjar,2025-03-16,0,0.29
+Lewis Hamilton,2025-03-16,0,0.01
+Nico Hulkenberg,2025-03-16,0,0.1
+Liam Lawson,2025-03-16,0,0.375
+Charles Leclerc,2025-03-16,0,0.005
+Max Verstappen,2025-03-16,0,0.0
+Lando Norris,2025-03-16,0,0.01
+Esteban Ocon,2025-03-16,0,0.245
+Oscar Piastri,2025-03-16,0,0.0
+George Russell,2025-03-16,0,0.0
+Carlos Sainz,2025-03-16,0,0.015
+Lance Stroll,2025-03-16,0,0.2
+Yuki Tsunoda,2025-03-16,0,0.15
+Alexander Albon,2025-04-13,0,0.195
+Fernando Alonso,2025-04-13,0,0.41120772080793594
+Kimi Antonelli,2025-04-13,0,0.047778932778932776
+Oliver Bearman,2025-04-13,0,0.3774699157767209
+Gabriel Bortoleto,2025-04-13,1,0.735
+Jack Doohan,2025-04-13,1,0.865
+Pierre Gasly,2025-04-13,0,0.125
+Isack Hadjar,2025-04-13,0,0.005
+Lewis Hamilton,2025-04-13,0,0.025
+Nico Hulkenberg,2025-04-13,0,0.18
+Liam Lawson,2025-04-13,0,0.415
+Charles Leclerc,2025-04-13,0,0.005
+Max Verstappen,2025-04-13,0,0.0
+Lando Norris,2025-04-13,0,0.005
+Esteban Ocon,2025-04-13,0,0.19
+Oscar Piastri,2025-04-13,0,0.0
+George Russell,2025-04-13,0,0.01
+Carlos Sainz,2025-04-13,0,0.005
+Lance Stroll,2025-04-13,0,0.295
+Yuki Tsunoda,2025-04-13,0,0.185
+Alexander Albon,2025-04-20,0,0.115
+Fernando Alonso,2025-04-20,0,0.375
+Kimi Antonelli,2025-04-20,0,0.05
+Oliver Bearman,2025-04-20,0,0.34253916116063166
+Gabriel Bortoleto,2025-04-20,0,0.145
+Jack Doohan,2025-04-20,1,0.89
+Pierre Gasly,2025-04-20,0,0.175
+Isack Hadjar,2025-04-20,0,0.22
+Lewis Hamilton,2025-04-20,0,0.015
+Nico Hulkenberg,2025-04-20,0,0.23
+Liam Lawson,2025-04-20,0,0.495
+Charles Leclerc,2025-04-20,0,0.005
+Max Verstappen,2025-04-20,0,0.0
+Lando Norris,2025-04-20,0,0.005
+Esteban Ocon,2025-04-20,0,0.245
+Oscar Piastri,2025-04-20,0,0.01
+George Russell,2025-04-20,0,0.005
+Carlos Sainz,2025-04-20,0,0.01
+Lance Stroll,2025-04-20,0,0.305
+Yuki Tsunoda,2025-04-20,0,0.2
