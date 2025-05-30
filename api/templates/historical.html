@@ -21,20 +21,29 @@
         margin-bottom: 2rem;
     }
 
-    .history-table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-top: 1rem;
+    .race-section {
+        margin: 2rem auto;
+        max-width: 900px;
+        padding: 1rem;
     }
 
-    .history-table th,
-    .history-table td {
+    .race-header {
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    .risk-table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .risk-table th, .risk-table td {
         border: 1px solid #ccc;
-        padding: 0.75rem;
+        padding: 0.6rem;
         text-align: center;
     }
 
-    .history-table th {
+    .risk-table th {
         background-color: #1a1a1a;
         color: white;
     }
@@ -54,25 +63,28 @@
     <h2>Predicciones de Churn - Temporada 2025</h2>
     <p class="history-description">Consulta el riesgo de abandono de cada piloto por fecha de carrera.</p>
 
-    <table class="history-table">
-        <thead>
-            <tr>
+    {% for date, items in results.items() %}
+    <div class="race-section">
+        <h3 class="race-header">Carrera del {{ date }}</h3>
+        <table class="risk-table">
+            <thead>
+                <tr>
                 <th>Piloto</th>
-                <th>Fecha</th>
                 <th>Riesgo</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for item in results %}
-            <tr>
-                <td>{{ item.driver }}</td>
-                <td>{{ item.race_date }}</td>
-                <td class="{{ 'risk-high' if item.risk_level == 'Alto' else 'risk-low' }}">
-                {{ item.risk_level }}
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in items %}
+                <tr>
+                    <td>{{ item.idDriver }}</td>
+                    <td class="{{ 'risk-high' if item.f1Churn == 1 else 'risk-low' }}">
+                    {{ item.f1Churn }}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% endfor %}
 </div>
 {% endblock %}
