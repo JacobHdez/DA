@@ -1,30 +1,32 @@
 {% extends "base.html" %}
 
-{% block title %}F1 Churn - Historial{% endblock %}
+{% block title %}F1 Churn - Histórico{% endblock %}
 
 {% block content %}
 <style>
-    .history-container {
-        max-width: 900px;
+    .controls {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
         margin: 2rem auto;
-        padding: 1rem;
-        text-align: center;
+        flex-wrap: wrap;
     }
 
-    .history-container h2 {
-        margin-bottom: 1rem;
-    }
-
-    .history-description {
+    select {
         font-size: 1rem;
-        color: #444;
-        margin-bottom: 2rem;
+        padding: 0.5rem;
+        min-width: 200px;
     }
 
     .race-section {
         margin: 2rem auto;
         max-width: 900px;
         padding: 1rem;
+        display: none;
+    }
+
+    .race-section.active {
+        display: block;
     }
 
     .race-header {
@@ -59,32 +61,75 @@
     }
 </style>
 
-<div class="history-container">
-    <h2>Predicciones de Churn - Temporada 2025</h2>
-    <p class="history-description">Consulta el riesgo de abandono de cada piloto por fecha de carrera.</p>
+<h2 style="text-align: center;">Historial de predicción de abandono</h2>
 
-    {% for date, items in results.items() %}
-    <div class="race-section">
-        <h3 class="race-header">Carrera del {{ date }}</h3>
-        <table class="risk-table">
-            <thead>
-                <tr>
+<!-- Selectores de carrera y piloto -->
+<div class="controls">
+    <select id="raceSelector" onchange="updateTable()">
+        {% for date in results %}
+        <option value="race_{{ loop.index }}">{{ date }}</option>
+        {% endfor %}
+    </select>
+
+    <select id="driverSelector" onchange="updateTable()">
+        <option value="all">Todos los pilotos</option>
+        {% for driver in all_drivers %}
+        <option value="{{ driver }}">{{ driver }}</option>
+        {% endfor %}
+    </select>
+</div>
+
+<!-- Tablas de cada carrera -->
+{% for date, items in results.items() %}
+<div class="race-section {% if loop.first %}active{% endif %}" id="race_{{ loop.index }}">
+    <h3 class="race-header">Carrera del {{ date }}</h3>
+    <table class="risk-table">
+        <thead>
+            <tr>
                 <th>Piloto</th>
                 <th>Riesgo</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for item in items %}
-                <tr>
-                    <td>{{ item.idDriver }}</td>
-                    <td class="{{ 'risk-high' if item.f1Churn == 1 else 'risk-low' }}">
-                    {{ item.f1Churn }}
-                    </td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    </div>
-    {% endfor %}
+                <th>Probabilidad</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in items %}
+            <tr data-driver="{{ item.idDriver }}">
+                <td>{{ item.idDriver }}</td>
+                <td class="{{ 'risk-high' if item.f1Churn == 1 else 'risk-low' }}">{{ 'Alto' if item.f1Churn == 1 else 'Bajo' }}</td>
+                <td>{{ "%.3f"|format(item.proba) }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 </div>
+{% endfor %}
+
+<script>
+    function updateTable() {
+        const raceId = document.getElementById('raceSelector').value;
+        const selectedDriver = document.getElementById('driverSelector').value;
+
+        // Ocultar todas las secciones
+        document.querySelectorAll('.race-section').forEach(section => {
+            section.classList.remove('active');
+        });
+
+        // Mostrar sección seleccionada
+        const activeSection = document.getElementById(raceId);
+        if (activeSection) {
+            activeSection.classList.add('active');
+
+            // Mostrar/Ocultar filas según piloto
+            const rows = activeSection.querySelectorAll('tbody tr');
+            rows.forEach(row => {
+                const driver = row.getAttribute('data-driver');
+                if (selectedDriver === 'all' || driver === selectedDriver) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        }
+    }
+</script>
 {% endblock %}
