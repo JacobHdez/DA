@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% block title %}F1 Churn - Historial{% endblock %}
+
+{% block content %}
+<style>
+    .history-container {
+        max-width: 900px;
+        margin: 2rem auto;
+        padding: 1rem;
+        text-align: center;
+    }
+
+    .history-container h2 {
+        margin-bottom: 1rem;
+    }
+
+    .history-description {
+        font-size: 1rem;
+        color: #444;
+        margin-bottom: 2rem;
+    }
+
+    .history-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 1rem;
+    }
+
+    .history-table th,
+    .history-table td {
+        border: 1px solid #ccc;
+        padding: 0.75rem;
+        text-align: center;
+    }
+
+    .history-table th {
+        background-color: #1a1a1a;
+        color: white;
+    }
+
+    .risk-high {
+        color: red;
+        font-weight: bold;
+    }
+
+    .risk-low {
+        color: green;
+        font-weight: bold;
+    }
+</style>
+
+<div class="history-container">
+    <h2>Predicciones de Churn - Temporada 2025</h2>
+    <p class="history-description">Consulta el riesgo de abandono de cada piloto por fecha de carrera.</p>
+
+    <table class="history-table">
+        <thead>
+            <tr>
+                <th>Piloto</th>
+                <th>Fecha</th>
+                <th>Riesgo</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for item in results %}
+            <tr>
+                <td>{{ item.driver }}</td>
+                <td>{{ item.race_date }}</td>
+                <td class="{{ 'risk-high' if item.risk_level == 'Alto' else 'risk-low' }}">
+                {{ item.risk_level }}
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
