@@ -103,7 +103,11 @@
     </table>
 </div>
 {% endfor %}
+<div id="driverChartContainer" style="max-width: 800px; margin: auto; display: none;">
+    <canvas id="driverChart"></canvas>
+</div>
 
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
     function updateTable() {
         const raceId = document.getElementById('raceSelector').value;
@@ -130,6 +134,76 @@
                 }
             });
         }
+
+        updateChart(selectedDriver);
+    }
+
+    function updateChart(driverId) {
+        const chartContainer = document.getElementById('driverChartContainer');
+
+        if (driverId === 'all') {
+            chartContainer.style.display = 'none';
+            return;
+        }
+
+        const dataPoints = [];
+
+        document.querySelectorAll('.race-section').forEach(section => {
+            const dateStr = section.querySelector('.race-header').textContent.split('del ')[1];
+            const row = section.querySelector(`tr[data-driver="${driverId}"]`);
+            if (row) {
+                const prob = parseFloat(row.children[2].textContent);
+                dataPoints.push({ date: dateStr, value: prob });
+            }
+        });
+
+        // Ordenar por fecha real (formato "DD/MM/YYYY")
+        dataPoints.sort((a, b) => {
+            const parseDate = str => {
+                const [day, month, year] = str.split('/');
+                return new Date(`${year}-${month}-${day}`);
+            };
+            return parseDate(a.date) - parseDate(b.date);
+        });
+
+        const dates = dataPoints.map(dp => dp.date);
+        const values = dataPoints.map(dp => dp.value);
+
+        chartContainer.style.display = 'block';
+        const ctx = document.getElementById('driverChart').getContext('2d');
+
+        // Destruir gráfico anterior si existe
+        if (window.driverChart instanceof Chart) {
+            window.driverChart.destroy();
+        }
+
+        // Crear nuevo gráfico
+        window.driverChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: dates,
+                datasets: [{
+                    label: 'Probabilidad de abandono',
+                    data: values,
+                    borderColor: 'red',
+                    backgroundColor: 'rgba(255, 0, 0, 0.2)',
+                    tension: 0.3
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        min: 0,
+                        max: 1,
+                        title: {
+                            display: true,
+                            text: 'Probabilidad'
+                        }
+                    }
+                }
+            }
+        });
     }
 </script>
 {% endblock %}
